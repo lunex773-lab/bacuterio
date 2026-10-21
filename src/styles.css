@@ -76,6 +76,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 /* ------------------------------------------------------------ top bar */
 .topbar {
   position: absolute;
+  z-index: 3;
   top: calc(12px + var(--safe-top));
   left: 12px;
   right: 12px;
@@ -128,6 +129,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 /* ------------------------------------------------------------ side columns */
 .col {
   position: absolute;
+  z-index: 2;
   top: calc(76px + var(--safe-top));
   bottom: 14px;
   width: 316px;
@@ -279,7 +281,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 .ladder .lv.on i { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
 
 /* tracking marker */
-.marker { position: absolute; left: 0; top: 0; pointer-events: none; will-change: transform; display: none; }
+.marker { position: absolute; left: 0; top: 0; pointer-events: none; will-change: transform; display: none; z-index: 0; }
 .marker .ring {
   position: absolute;
   width: 38px;
@@ -450,6 +452,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
   .tabbar {
     display: flex;
     position: absolute;
+    z-index: 3;
     left: 8px;
     right: 8px;
     bottom: calc(8px + var(--safe-bottom));
@@ -462,7 +465,8 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
   .tabbar button.on { background: rgba(159, 247, 230, 0.12); color: var(--accent); }
   .scalebox { left: 8px; bottom: calc(66px + var(--safe-bottom)); padding: 6px 10px; }
   .ladder { display: none; }
-  .scalebox.hidden-mobile { display: none; }
+  #ui.sheet-open .scalebox { display: none; }
+  #ui.sheet-open .marker { opacity: 0.25; }
   .start { grid-template-columns: 1fr; align-content: start; gap: 22px; padding: calc(28px + var(--safe-top)) 16px 28px; background: rgba(3, 12, 16, 0.72); }
   .start .lead { font-size: 13.5px; margin-top: 14px; }
   .phage-cards { grid-template-columns: 1fr; }

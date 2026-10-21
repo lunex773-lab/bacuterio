@@ -183,6 +183,10 @@ export class SimulationWorld {
         const h = rng.range(sp.birthHalfLength, sp.divisionHalfLength * 0.95);
         const b = this.bacteriaSystem.create(species, x, y, z, Math.cos(ang), rng.range(-0.15, 0.15), Math.sin(ang), h);
         b.bornTime = -rng.range(0, 1800);
+        if (rng.next() < sp.initialResistant) {
+          b.resistant = true;
+          b.state = BacteriaState.Resistant;
+        }
       }
     }
     // relax overlaps before the observation starts

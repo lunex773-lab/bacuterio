@@ -106,6 +106,20 @@
             "ja": "高い",
             "en": "High"
           }
+        },
+        "initialResistant": {
+          "value": 0.012,
+          "unit": "fraction",
+          "evidenceLevel": "assumption",
+          "modelType": "presentational",
+          "source": {
+            "ja": "既存の受容体変異株（ルリア＝デルブリュックの実験で示された、ファージ曝露前から存在する耐性株）。小集団でも観察できるよう割合を誇張した仮定値",
+            "en": "Pre-existing receptor mutants (resistance present before phage exposure, as shown by Luria–Delbrück). Fraction exaggerated so it is observable in a small population"
+          },
+          "uncertainty": {
+            "ja": "意図的な誇張",
+            "en": "Deliberately exaggerated"
+          }
         }
       }
     },
@@ -213,6 +227,20 @@
           "uncertainty": {
             "ja": "高い",
             "en": "High"
+          }
+        },
+        "initialResistant": {
+          "value": 0,
+          "unit": "fraction",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "宿主域外のため不要",
+            "en": "Outside host range"
+          },
+          "uncertainty": {
+            "ja": "—",
+            "en": "—"
           }
         }
       }

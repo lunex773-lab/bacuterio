@@ -51,6 +51,7 @@ export type SpeciesParamKey =
   | 'doublingTime'
   | 'resistanceMutation'
   | 'resistanceCost'
+  | 'initialResistant'
   | 'deathRate';
 
 export interface SpeciesSpec {
@@ -153,6 +154,7 @@ export interface ResolvedSpeciesParams {
   growthRateMax: number;
   resistanceMutation: number;
   resistanceCost: number;
+  initialResistant: number;
   deathRate: number;
 }
 
@@ -195,6 +197,7 @@ export function resolveSpecies(spec: SpeciesSpec): ResolvedSpeciesParams {
     growthRateMax: Math.LN2 / p.doublingTime.value,
     resistanceMutation: p.resistanceMutation.value,
     resistanceCost: p.resistanceCost.value,
+    initialResistant: p.initialResistant.value,
     deathRate: p.deathRate.value,
   };
 }

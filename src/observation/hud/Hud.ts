@@ -305,6 +305,7 @@ export class Hud {
     r.left.classList.toggle('open', id !== null && leftTabs.includes(id));
     r.right.classList.toggle('open', id !== null && !leftTabs.includes(id));
     for (const s of Array.from(this.root.querySelectorAll('.sheet-section'))) s.classList.toggle('show', s.getAttribute('data-tab') === id);
+    this.root.classList.toggle('sheet-open', id !== null);
   }
 
   private renderBookmarks(): void {
@@ -669,7 +670,7 @@ export class Hud {
         h(
           'tr',
           {},
-          h('td', {}, name),
+          h('td', {}, tk(`param.${name}`), h('div', { class: 'muted small num' }, name)),
           h('td', { class: 'v' }, `${p.value} ${p.unit}`),
           h('td', {}, h('span', { class: `badge ${p.evidenceLevel}` }, tk(`evidence.${p.evidenceLevel}`)), h('br'), h('span', { class: 'badge mt' }, tk(`modeltype.${p.modelType}`))),
           h('td', {}, loc(p.source), h('div', { class: 'muted small', style: 'margin-top:3px' }, `${t('model.uncertainty')}: ${loc(p.uncertainty)}`)),

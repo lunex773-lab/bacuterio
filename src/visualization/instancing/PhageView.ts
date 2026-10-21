@@ -26,12 +26,14 @@ void main() {
   // a labelled particle is ~0.2 µm, drawn no smaller than a few pixels (fluorescence look)
   float worldSize = aKind > 1.5 && aKind < 2.5 ? 0.9 : (aKind > 2.5 ? 0.35 : 0.5);
   float px = worldSize * uPixelScale / max(dist, 0.01);
-  float minPx = aKind > 1.5 && aKind < 2.5 ? 9.0 : (aKind > 2.5 ? 2.0 : 3.0);
+  float minPx = aKind > 1.5 && aKind < 2.5 ? 9.0 : (aKind > 2.5 ? 2.0 : 2.6);
   gl_PointSize = clamp(px, minPx, 64.0);
   // fade out where the true-scale model takes over
   vAlpha = smoothstep(uNearFade * 0.45, uNearFade, dist);
   if (aKind > 1.5 && aKind < 2.5) vAlpha = max(vAlpha, 0.35);
   vAlpha *= 0.75 + 0.25 * sin(uTime * 2.0 + aSeed * 40.0);
+  // unremarkable free particles stay quieter than the tracked lineage
+  if (aKind < 0.5) vAlpha *= 0.7;
   vCore = clamp(px / 6.0, 0.4, 1.0);
   vKind = aKind;
   gl_Position = projectionMatrix * mv;
