@@ -1,0 +1,249 @@
+{
+  "modelVersion": "0.1.0",
+  "species": [
+    {
+      "id": "ecoli",
+      "name": {
+        "ja": "大腸菌（モデル株）",
+        "en": "E. coli (model strain)"
+      },
+      "shape": "rod",
+      "params": {
+        "radius": {
+          "value": 0.45,
+          "unit": "µm",
+          "evidenceLevel": "literature-range",
+          "modelType": "measured",
+          "source": {
+            "ja": "大腸菌の典型的な直径（約0.8〜1.0 µm）",
+            "en": "Typical E. coli diameter (~0.8–1.0 µm)"
+          },
+          "uncertainty": {
+            "ja": "低",
+            "en": "Low"
+          }
+        },
+        "birthHalfLength": {
+          "value": 0.55,
+          "unit": "µm",
+          "evidenceLevel": "literature-range",
+          "modelType": "approximate",
+          "source": {
+            "ja": "誕生時の全長 約2 µm（円柱部の半長として表現）",
+            "en": "Length at birth ~2 µm (stored as half cylinder length)"
+          },
+          "uncertainty": {
+            "ja": "低",
+            "en": "Low"
+          }
+        },
+        "divisionHalfLength": {
+          "value": 1.55,
+          "unit": "µm",
+          "evidenceLevel": "literature-range",
+          "modelType": "approximate",
+          "source": {
+            "ja": "分裂直前の全長 約4 µm",
+            "en": "Length before division ~4 µm"
+          },
+          "uncertainty": {
+            "ja": "低",
+            "en": "Low"
+          }
+        },
+        "doublingTime": {
+          "value": 1800,
+          "unit": "s",
+          "evidenceLevel": "literature-range",
+          "modelType": "approximate",
+          "source": {
+            "ja": "37℃・富栄養条件での倍加時間（約20〜30分）。体内ではより遅い",
+            "en": "Doubling time at 37 °C in rich medium (~20–30 min); slower in vivo"
+          },
+          "uncertainty": {
+            "ja": "環境に強く依存",
+            "en": "Strongly environment-dependent"
+          }
+        },
+        "resistanceMutation": {
+          "value": 0.004,
+          "unit": "/division",
+          "evidenceLevel": "assumption",
+          "modelType": "presentational",
+          "source": {
+            "ja": "受容体喪失変異。実際（10⁻⁷〜10⁻⁶程度）より大きく圧縮し、小集団でも観察可能にした仮定値",
+            "en": "Receptor-loss mutation, compressed far above real rates (~10⁻⁷–10⁻⁶) so it is observable in a small population"
+          },
+          "uncertainty": {
+            "ja": "意図的な誇張",
+            "en": "Deliberately exaggerated"
+          }
+        },
+        "resistanceCost": {
+          "value": 0.1,
+          "unit": "fraction",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "受容体喪失に伴う成長コストの仮定値",
+            "en": "Assumed growth cost of receptor loss"
+          },
+          "uncertainty": {
+            "ja": "高い",
+            "en": "High"
+          }
+        },
+        "deathRate": {
+          "value": 1e-05,
+          "unit": "1/s",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "自然死の基底率の仮定値",
+            "en": "Assumed background death rate"
+          },
+          "uncertainty": {
+            "ja": "高い",
+            "en": "High"
+          }
+        },
+        "initialResistant": {
+          "value": 0.012,
+          "unit": "fraction",
+          "evidenceLevel": "assumption",
+          "modelType": "presentational",
+          "source": {
+            "ja": "既存の受容体変異株（ルリア＝デルブリュックの実験で示された、ファージ曝露前から存在する耐性株）。小集団でも観察できるよう割合を誇張した仮定値",
+            "en": "Pre-existing receptor mutants (resistance present before phage exposure, as shown by Luria–Delbrück). Fraction exaggerated so it is observable in a small population"
+          },
+          "uncertainty": {
+            "ja": "意図的な誇張",
+            "en": "Deliberately exaggerated"
+          }
+        }
+      }
+    },
+    {
+      "id": "enterococcus",
+      "name": {
+        "ja": "腸球菌（モデル株・非適合）",
+        "en": "Enterococcus (model strain, non-host)"
+      },
+      "shape": "coccus",
+      "params": {
+        "radius": {
+          "value": 0.45,
+          "unit": "µm",
+          "evidenceLevel": "literature-range",
+          "modelType": "measured",
+          "source": {
+            "ja": "腸球菌の典型的な直径（約0.6〜1.0 µm）",
+            "en": "Typical Enterococcus diameter (~0.6–1.0 µm)"
+          },
+          "uncertainty": {
+            "ja": "低",
+            "en": "Low"
+          }
+        },
+        "birthHalfLength": {
+          "value": 0.0,
+          "unit": "µm",
+          "evidenceLevel": "approximation",
+          "modelType": "approximate",
+          "source": {
+            "ja": "誕生時は球形",
+            "en": "Spherical at birth"
+          },
+          "uncertainty": {
+            "ja": "低",
+            "en": "Low"
+          }
+        },
+        "divisionHalfLength": {
+          "value": 0.45,
+          "unit": "µm",
+          "evidenceLevel": "approximation",
+          "modelType": "approximate",
+          "source": {
+            "ja": "双球状に伸長してから分裂",
+            "en": "Elongates into a diplococcus before dividing"
+          },
+          "uncertainty": {
+            "ja": "低",
+            "en": "Low"
+          }
+        },
+        "doublingTime": {
+          "value": 2400,
+          "unit": "s",
+          "evidenceLevel": "approximation",
+          "modelType": "approximate",
+          "source": {
+            "ja": "富栄養条件での倍加時間の概算（約30〜40分）",
+            "en": "Approximate doubling time in rich medium (~30–40 min)"
+          },
+          "uncertainty": {
+            "ja": "環境に強く依存",
+            "en": "Strongly environment-dependent"
+          }
+        },
+        "resistanceMutation": {
+          "value": 0,
+          "unit": "/division",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "そもそも宿主域外のため変異は不要",
+            "en": "Outside host range, so no mutation needed"
+          },
+          "uncertainty": {
+            "ja": "—",
+            "en": "—"
+          }
+        },
+        "resistanceCost": {
+          "value": 0,
+          "unit": "fraction",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "—",
+            "en": "—"
+          },
+          "uncertainty": {
+            "ja": "—",
+            "en": "—"
+          }
+        },
+        "deathRate": {
+          "value": 1e-05,
+          "unit": "1/s",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "自然死の基底率の仮定値",
+            "en": "Assumed background death rate"
+          },
+          "uncertainty": {
+            "ja": "高い",
+            "en": "High"
+          }
+        },
+        "initialResistant": {
+          "value": 0,
+          "unit": "fraction",
+          "evidenceLevel": "assumption",
+          "modelType": "approximate",
+          "source": {
+            "ja": "宿主域外のため不要",
+            "en": "Outside host range"
+          },
+          "uncertainty": {
+            "ja": "—",
+            "en": "—"
+          }
+        }
+      }
+    }
+  ]
+}

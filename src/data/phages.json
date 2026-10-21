@@ -1,0 +1,45 @@
+{
+  "modelVersion": "0.1.0",
+  "phages": [
+    {
+      "id": "T4",
+      "name": { "ja": "T4型ファージ", "en": "T4-like phage" },
+      "family": { "ja": "ミオウイルス型（収縮性の長い尾部）", "en": "Myovirus morphotype (long contractile tail)" },
+      "morphology": "myovirus",
+      "hostSpecies": ["ecoli"],
+      "lifecycle": "lytic",
+      "params": {
+        "adsorptionRate": { "value": 40, "unit": "µm³/s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "T4/大腸菌の吸着速度定数の代表的な文献値（約2×10⁻⁹ mL/min）を単位換算", "en": "Typical literature order for T4 / E. coli adsorption constant (~2×10⁻⁹ mL/min), unit-converted" }, "uncertainty": { "ja": "条件により約1桁変動", "en": "Varies ~1 order of magnitude with conditions" } },
+        "diffusion": { "value": 4, "unit": "µm²/s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "大型ファージ粒子のブラウン拡散係数の代表値（約4×10⁻⁸ cm²/s）", "en": "Typical Brownian diffusion of large phage particles (~4×10⁻⁸ cm²/s)" }, "uncertainty": { "ja": "粘液中ではさらに低下しうる", "en": "May be lower in mucus" } },
+        "adsorbPhase": { "value": 20, "unit": "s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "尾繊維結合から基盤の構造変化までを一定時間で抽象化", "en": "Tail-fibre binding to baseplate rearrangement abstracted as a fixed duration" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "injectPhase": { "value": 40, "unit": "s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "尾鞘収縮とDNA注入を一定時間で抽象化", "en": "Sheath contraction and DNA injection abstracted as a fixed duration" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "eclipse": { "value": 720, "unit": "s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "37℃・富栄養条件でのT4暗黒期の代表値（約12分）", "en": "Typical T4 eclipse period at 37 °C in rich medium (~12 min)" }, "uncertainty": { "ja": "±数分", "en": "± a few minutes" } },
+        "latentMean": { "value": 1500, "unit": "s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "37℃・富栄養条件でのT4潜伏期の代表値（約25分）", "en": "Typical T4 latent period at 37 °C in rich medium (~25 min)" }, "uncertainty": { "ja": "宿主の生理状態に依存", "en": "Depends on host physiology" } },
+        "latentSd": { "value": 120, "unit": "s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "細胞間ばらつきを正規分布で仮定", "en": "Cell-to-cell variation assumed normal" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "burstMean": { "value": 100, "unit": "phages", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "T4のバーストサイズの代表的範囲（約100〜200）の下限寄り", "en": "Lower end of typical T4 burst size range (~100–200)" }, "uncertainty": { "ja": "宿主の成長速度に強く依存", "en": "Strongly depends on host growth rate" } },
+        "burstSd": { "value": 30, "unit": "phages", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "細胞間ばらつきを正規分布で仮定", "en": "Cell-to-cell variation assumed normal" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "decayRate": { "value": 0.00014, "unit": "1/s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "腸管内での失活・排除をまとめた仮定値（半減期 約80分）", "en": "Assumed lumped inactivation/clearance in the gut (half-life ~80 min)" }, "uncertainty": { "ja": "非常に高い", "en": "Very high" } }
+      }
+    },
+    {
+      "id": "T7",
+      "name": { "ja": "T7型ファージ", "en": "T7-like phage" },
+      "family": { "ja": "ポドウイルス型（短い尾部）", "en": "Podovirus morphotype (short tail)" },
+      "morphology": "podovirus",
+      "hostSpecies": ["ecoli"],
+      "lifecycle": "lytic",
+      "params": {
+        "adsorptionRate": { "value": 25, "unit": "µm³/s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "大腸菌ファージの吸着速度定数の一般的な桁（10⁻⁹ mL/min）から設定", "en": "Set from the general order of E. coli phage adsorption constants (10⁻⁹ mL/min)" }, "uncertainty": { "ja": "約1桁", "en": "~1 order of magnitude" } },
+        "diffusion": { "value": 5, "unit": "µm²/s", "evidenceLevel": "approximation", "modelType": "approximate", "source": { "ja": "粒子径が小さい分、T4より大きい拡散係数と仮定", "en": "Assumed faster than T4 due to smaller particle" }, "uncertainty": { "ja": "中", "en": "Medium" } },
+        "adsorbPhase": { "value": 15, "unit": "s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "尾繊維による結合を一定時間で抽象化", "en": "Tail-fibre binding abstracted as a fixed duration" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "injectPhase": { "value": 60, "unit": "s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "T7はゲノムを段階的に取り込むため注入を長めに設定", "en": "T7 genome entry is gradual, so injection is set longer" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "eclipse": { "value": 480, "unit": "s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "37℃でのT7暗黒期の代表値（約8分）", "en": "Typical T7 eclipse at 37 °C (~8 min)" }, "uncertainty": { "ja": "±数分", "en": "± a few minutes" } },
+        "latentMean": { "value": 900, "unit": "s", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "37℃・富栄養条件でのT7潜伏期の代表値（約13〜17分）", "en": "Typical T7 latent period at 37 °C in rich medium (~13–17 min)" }, "uncertainty": { "ja": "宿主の生理状態に依存", "en": "Depends on host physiology" } },
+        "latentSd": { "value": 90, "unit": "s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "細胞間ばらつきを正規分布で仮定", "en": "Cell-to-cell variation assumed normal" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "burstMean": { "value": 120, "unit": "phages", "evidenceLevel": "literature-range", "modelType": "approximate", "source": { "ja": "T7のバーストサイズの代表的範囲（約100〜200）", "en": "Typical T7 burst size range (~100–200)" }, "uncertainty": { "ja": "宿主の成長速度に依存", "en": "Depends on host growth rate" } },
+        "burstSd": { "value": 35, "unit": "phages", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "細胞間ばらつきを正規分布で仮定", "en": "Cell-to-cell variation assumed normal" }, "uncertainty": { "ja": "高い", "en": "High" } },
+        "decayRate": { "value": 0.00014, "unit": "1/s", "evidenceLevel": "assumption", "modelType": "approximate", "source": { "ja": "腸管内での失活・排除をまとめた仮定値（半減期 約80分）", "en": "Assumed lumped inactivation/clearance in the gut (half-life ~80 min)" }, "uncertainty": { "ja": "非常に高い", "en": "Very high" } }
+      }
+    }
+  ]
+}
