@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #06161d;
   --panel: rgba(7, 22, 29, 0.66);
   --panel-strong: rgba(8, 24, 32, 0.9);
