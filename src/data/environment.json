@@ -1,0 +1,163 @@
+{
+  "modelVersion": "0.1.0",
+  "name": {
+    "ja": "腸管粘液層上のバイオフィルム（単一区画）",
+    "en": "Biofilm on the intestinal mucus layer (single compartment)"
+  },
+  "params": {
+    "sizeX": {
+      "value": 80,
+      "unit": "µm",
+      "evidenceLevel": "assumption",
+      "modelType": "presentational",
+      "source": {
+        "ja": "観察区画の大きさ",
+        "en": "Size of the observed compartment"
+      },
+      "uncertainty": {
+        "ja": "—",
+        "en": "—"
+      }
+    },
+    "sizeY": {
+      "value": 30,
+      "unit": "µm",
+      "evidenceLevel": "assumption",
+      "modelType": "presentational",
+      "source": {
+        "ja": "観察区画の高さ",
+        "en": "Height of the observed compartment"
+      },
+      "uncertainty": {
+        "ja": "—",
+        "en": "—"
+      }
+    },
+    "sizeZ": {
+      "value": 80,
+      "unit": "µm",
+      "evidenceLevel": "assumption",
+      "modelType": "presentational",
+      "source": {
+        "ja": "観察区画の奥行き",
+        "en": "Depth of the observed compartment"
+      },
+      "uncertainty": {
+        "ja": "—",
+        "en": "—"
+      }
+    },
+    "voxelSize": {
+      "value": 10,
+      "unit": "µm",
+      "evidenceLevel": "assumption",
+      "modelType": "approximate",
+      "source": {
+        "ja": "局所環境と集団モデルの区画サイズ",
+        "en": "Voxel size for local environment and population model"
+      },
+      "uncertainty": {
+        "ja": "—",
+        "en": "—"
+      }
+    },
+    "nutrientHalfSat": {
+      "value": 0.2,
+      "unit": "relative",
+      "evidenceLevel": "assumption",
+      "modelType": "approximate",
+      "source": {
+        "ja": "モノー式の半飽和定数（相対濃度）",
+        "en": "Monod half-saturation constant (relative concentration)"
+      },
+      "uncertainty": {
+        "ja": "高い",
+        "en": "High"
+      }
+    },
+    "nutrientUptake": {
+      "value": 0.12,
+      "unit": "relative·µm³/cell-division",
+      "evidenceLevel": "assumption",
+      "modelType": "approximate",
+      "source": {
+        "ja": "細胞1回分の成長で消費する栄養の仮定値",
+        "en": "Assumed nutrient cost of one cell growth cycle"
+      },
+      "uncertainty": {
+        "ja": "高い",
+        "en": "High"
+      }
+    },
+    "nutrientInflow": {
+      "value": 0.0006,
+      "unit": "1/s",
+      "evidenceLevel": "assumption",
+      "modelType": "approximate",
+      "source": {
+        "ja": "管腔側（上面）からの栄養供給率",
+        "en": "Nutrient supply rate from the lumen side (top)"
+      },
+      "uncertainty": {
+        "ja": "高い",
+        "en": "High"
+      }
+    },
+    "nutrientDiffusion": {
+      "value": 0.002,
+      "unit": "1/s",
+      "evidenceLevel": "assumption",
+      "modelType": "approximate",
+      "source": {
+        "ja": "区画間の栄養拡散の交換率",
+        "en": "Inter-voxel nutrient exchange rate"
+      },
+      "uncertainty": {
+        "ja": "高い",
+        "en": "High"
+      }
+    },
+    "dormancyThreshold": {
+      "value": 0.3,
+      "unit": "μ/μmax",
+      "evidenceLevel": "assumption",
+      "modelType": "approximate",
+      "source": {
+        "ja": "成長率がこれを下回ると休眠状態へ",
+        "en": "Cells go dormant below this relative growth rate"
+      },
+      "uncertainty": {
+        "ja": "高い",
+        "en": "High"
+      }
+    },
+    "temperature": {
+      "value": 37,
+      "unit": "°C",
+      "evidenceLevel": "literature-range",
+      "modelType": "presentational",
+      "source": {
+        "ja": "ヒト腸管の体温。現バージョンでは計算に未使用（表示のみ）",
+        "en": "Human gut temperature. Display only in this version"
+      },
+      "uncertainty": {
+        "ja": "—",
+        "en": "—"
+      }
+    },
+    "pH": {
+      "value": 6.8,
+      "unit": "pH",
+      "evidenceLevel": "literature-range",
+      "modelType": "presentational",
+      "source": {
+        "ja": "大腸付近の代表的なpH。現バージョンでは計算に未使用（表示のみ）",
+        "en": "Representative colonic pH. Display only in this version"
+      },
+      "uncertainty": {
+        "ja": "—",
+        "en": "—"
+      }
+    }
+  }
+}
